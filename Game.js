@@ -4,17 +4,39 @@ class Game {
     this.character = new Character();
     this.records = [];
     this.gram = [];
+    //this.points = 0;
   }
 
   setup() {
     this.background.setup();
   }
 
+  // //COLLECTION FOR RECORDS
+  intersectionCheck(record, player) {
+    //  if player's right side is to the left of the record's left
+    if (player.x + player.width < record.x) {
+      return false;
+    }
+    // if record's right side is to the left of player's left
+    if (record.x + record.width < player.x) {
+      return false;
+    }
+    // player top side is below record's bottom side
+    if (player.y > record.y + record.height) {
+      return false;
+    }
+    //  record top side is below the player's bottom side
+    if (record.y > player.y + player.height) {
+      return false;
+    }
+    return true;
+  }
+
   draw() {
     this.background.draw();
     this.character.draw();
 
-    //records
+    //RECORDS
     if (frameCount % 420 === 0) {
       this.records.push(new Record());
     }
@@ -23,6 +45,11 @@ class Game {
       // when off canvas remove from records from array
       if (record.x + record.width <= 0) {
         this.records.splice(index, 1);
+      }
+      //  //do something when record collected
+      if (this.intersectionCheck(record, this.character)) {
+        console.log("GOTTHA");
+        //this.points += 1;
       }
     });
 
@@ -38,32 +65,6 @@ class Game {
         this.gram.splice(index, 1);
       }
     });
-
-    //     //do something when record collected
-    //     if (this.collection(record,this.player)) {
-    //       console.log("GOTTHA")
-    //     }
-
-    //  //COLLECTION FOR RECORDS
-    //  collectionCheck(record, player){
-    //   //  if player's right side is to the left of the record's left
-    //   if (player.x + player.width < record.x) {
-    //     return false;
-    //   }
-    //   // if record's right side is to the left of player's left
-    //   if (record.x + record.width < player.x) {
-    //     return false;
-    //   }
-    //   // player top side is below record's bottom side
-    //   if (player.y > record.y + record.height) {
-    //     return false;
-    //   }
-    //   //  record top side is below the player's bottom side
-    //   if (record.y > player.y + player.height) {
-    //     return false;
-    //   }
-    //   return true;
-    // }
 
     // //COLLISION CHECK FOR OBSTACLES
     //  collisionCheck(obstacle, player) {
