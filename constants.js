@@ -1,0 +1,2 @@
+let bg;
+let char;
