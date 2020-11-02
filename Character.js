@@ -16,7 +16,7 @@ class Character {
   }
 
   jump() {
-    if (this.jumpCounts === 3) {
+    if (this.jumpCounts === 4) {
       return;
     }
     this.jumpCounts++;
