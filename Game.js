@@ -1,8 +1,9 @@
 class Game {
   constructor() {
+    console.log("this is the game constructor");
     this.background = new Background();
     this.character = new Character();
-    this.obstacle = new Obstacle();
+    this.obstacles = [];
   }
 
   setup() {
@@ -12,6 +13,16 @@ class Game {
   draw() {
     this.background.draw();
     this.character.draw();
-    this.obstacle.draw();
+    if (frameCount % 120 === 0) {
+      this.obstacles.push(new Obstacle());
+    }
+
+    this.obstacles.forEach((obstacle, index) => {
+      obstacle.draw();
+      // everytime the obstacle goes off canvas, remove it from the array
+      if (obstacle.x + obstacle.width <= 0) {
+        this.obstacles.splice(index, 1);
+      }
+    });
   }
 }

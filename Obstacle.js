@@ -4,11 +4,10 @@ class Obstacle {
     this.x = window.innerWidth;
     this.width = 50;
     this.height = 50;
-    this.y = 300; //random(0, window.innerHeight);
+    this.y = random(100, 550);
   }
 
   draw() {
-    // rect function takes 4 arguments! everytime this method get's called, the obstacle will move towards the playes (this.x -= 3)
     image(record, this.x, this.y, this.width, this.height);
     this.x -= 3;
   }

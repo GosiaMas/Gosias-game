@@ -7,6 +7,7 @@ function preload() {
 }
 
 function setup() {
+  console.log("setup");
   createCanvas(window.innerWidth, window.innerHeight);
   game.setup();
 }
@@ -14,4 +15,10 @@ function setup() {
 function draw() {
   clear();
   game.draw();
+}
+
+function keyPressed() {
+  if (keyCode === 32) {
+    game.character.jump();
+  }
 }
