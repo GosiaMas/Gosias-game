@@ -4,6 +4,7 @@ class Obstacle {
     this.y = 560;
     this.width = 60;
     this.height = 50;
+    this.beenTouched = false;
   }
 
   draw() {

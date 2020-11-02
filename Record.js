@@ -5,6 +5,7 @@ class Record {
     this.y = random(100, 450);
     this.width = 50;
     this.height = 50;
+    this.beenTouched = false;
   }
   draw() {
     image(record, this.x, this.y, this.width, this.height);
