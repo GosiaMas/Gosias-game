@@ -3,6 +3,7 @@ const game = new Game();
 function preload() {
   bg = loadImage("./images/background.png");
   char = loadImage("./images/output-onlinepngtools.png");
+  // record = loadImage("./images/vinyl.png");
 }
 
 function setup() {
