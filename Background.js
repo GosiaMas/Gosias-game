@@ -6,7 +6,6 @@ class Background {
   setup() {
     this.height = window.innerHeight;
     this.width = window.innerWidth;
-    //console.log(window.innerWidth);
   }
 
   draw() {
@@ -19,23 +18,5 @@ class Background {
       // reset the background back to its starting point, to give the illusion of never ending loop
       this.x = 0;
     }
-  }
-}
-
-class GoodEnd extends Background {
-  constructor() {
-    super();
-  }
-  draw() {
-    image(goodEnd, this.x, 0, this.width, this.height);
-  }
-}
-
-class BadEnd extends Background {
-  constructor() {
-    super();
-  }
-  draw() {
-    image(badEnd, this.x, 0, this.width, this.height);
   }
 }

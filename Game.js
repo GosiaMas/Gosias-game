@@ -8,7 +8,7 @@ class Game {
     this.lifes = 3;
     this.goodEnd = new GoodEnd();
     this.badEnd = new BadEnd();
-    this.timer = 60;
+    this.timer = 40;
   }
 
   setup() {
@@ -58,7 +58,7 @@ class Game {
     });
 
     //GRAMOPHONES
-    const randomNewObstacle = Math.floor(random([120, 500, 350]));
+    const randomNewObstacle = Math.floor(random([120, 300, 350]));
     if (frameCount % randomNewObstacle === 0) {
       const newGram = new Obstacle();
       this.gram.push(newGram);
@@ -74,7 +74,7 @@ class Game {
       }
     });
     if (this.lifes <= 0) {
-      noLoop();
+      this.callGameOver();
     }
 
     //draw Points and Lifes
@@ -90,13 +90,18 @@ class Game {
       this.timer--;
     }
     if (this.timer === 0) {
+      this.callGameOver();
+    }
+  }
+  callGameOver() {
+    if (this.points >= 6) {
+      clear();
+      this.goodEnd.draw();
+      noLoop();
+    } else {
+      clear();
+      this.badEnd.draw();
       noLoop();
     }
-    // // draw another screen on noLoop
-    // if ([this.timer =< 0 || this.lives =< 0] && this.points >= 6) {
-    //   this.goodEnd.draw();
-    // } else if ([this.timer =< 0 || this.lives =< 0]] && this.points =< 6) {
-    //   this.badEnd.draw();
-    // }
   }
 }

@@ -7,6 +7,7 @@ function preload() {
   gram = loadImage("./images/gramophone.png");
   goodEnd = loadImage("./images/handsUp.png");
   badEnd = loadImage("./images/empty2.png");
+  //mySound =
 }
 
 function setup() {

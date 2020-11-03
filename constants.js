@@ -1,7 +1,7 @@
-const bg;
-const char;
-const record;
-const gram;
-const goodEnd;
-const badEnd;
-
+let bg;
+let char;
+let record;
+let gram;
+let goodEnd;
+let badEnd;
+let mySound;
