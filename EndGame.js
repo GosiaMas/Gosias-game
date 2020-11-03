@@ -17,7 +17,6 @@ class GoodEnd extends EndGame {
     fill(250);
     text("GAME OVER", 600, 100);
     text("Tonight you saved somebody's life!", 400, 150);
-    //background(169, 169, 169);
     //(img, x, y, width, height)
     image(goodEnd, 480, 200, 500, 400);
   }

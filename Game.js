@@ -9,12 +9,13 @@ class Game {
     this.goodEnd = new GoodEnd();
     this.badEnd = new BadEnd();
     this.timer = 40;
-    //this.mySound = mySound;
+    this.isRunning = false;
+    // this.mySound = mySound;
   }
 
   setup() {
     this.background.setup();
-    //this.mySound.play();
+    // this.mySound.play();
   }
 
   //COLLISION CHECK AGAINST CHARACTER (obstacle is just a placeholder for record or gramophone)
