@@ -6,6 +6,9 @@ class Game {
     this.gram = [];
     this.points = 0;
     this.lifes = 3;
+    this.goodEnd = new GoodEnd();
+    this.badEnd = new BadEnd();
+    this.timer = 60;
   }
 
   setup() {
@@ -67,6 +70,7 @@ class Game {
       }
       if (this.collisionCheck(obstacle, this.character)) {
         this.lifes -= 1;
+        obstacle.y = 1000;
       }
     });
     if (this.lifes <= 0) {
@@ -80,5 +84,19 @@ class Game {
     fill(70, 3, 117);
     text(`${this.points}`, 150, 100);
     text(`❤️  ${this.lifes}`, 100, 140);
+
+    //set game timer to 1 min
+    if (frameCount % 60 === 0 && this.timer > 0) {
+      this.timer--;
+    }
+    if (this.timer === 0) {
+      noLoop();
+    }
+    // // draw another screen on noLoop
+    // if ([this.timer =< 0 || this.lives =< 0] && this.points >= 6) {
+    //   this.goodEnd.draw();
+    // } else if ([this.timer =< 0 || this.lives =< 0]] && this.points =< 6) {
+    //   this.badEnd.draw();
+    // }
   }
 }

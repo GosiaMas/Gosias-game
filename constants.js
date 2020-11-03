@@ -1,4 +1,7 @@
-let bg;
-let char;
-let record;
-let gram;
+const bg;
+const char;
+const record;
+const gram;
+const goodEnd;
+const badEnd;
+

@@ -21,3 +21,21 @@ class Background {
     }
   }
 }
+
+class GoodEnd extends Background {
+  constructor() {
+    super();
+  }
+  draw() {
+    image(goodEnd, this.x, 0, this.width, this.height);
+  }
+}
+
+class BadEnd extends Background {
+  constructor() {
+    super();
+  }
+  draw() {
+    image(badEnd, this.x, 0, this.width, this.height);
+  }
+}

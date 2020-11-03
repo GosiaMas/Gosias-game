@@ -5,6 +5,8 @@ function preload() {
   char = loadImage("./images/output-onlinepngtools.png");
   record = loadImage("./images/vinyl-removebg-preview (1).png");
   gram = loadImage("./images/gramophone.png");
+  goodEnd = loadImage("./images/handsUp.png");
+  badEnd = loadImage("./images/empty2.png");
 }
 
 function setup() {
