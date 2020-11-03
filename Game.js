@@ -50,6 +50,7 @@ class Game {
       //  //do something when record collected
       if (this.collisionCheck(record, this.character)) {
         this.points += 1;
+        record.y = -200;
       }
     });
 
@@ -71,6 +72,7 @@ class Game {
     if (this.lifes <= 0) {
       noLoop();
     }
+
     //draw Points and Lifes
     image(record, 100, 75, 30, 30);
     textSize(30);
