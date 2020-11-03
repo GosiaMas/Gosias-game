@@ -9,10 +9,12 @@ class Game {
     this.goodEnd = new GoodEnd();
     this.badEnd = new BadEnd();
     this.timer = 40;
+    //this.mySound = mySound;
   }
 
   setup() {
     this.background.setup();
+    //this.mySound.play();
   }
 
   //COLLISION CHECK AGAINST CHARACTER (obstacle is just a placeholder for record or gramophone)
@@ -36,12 +38,32 @@ class Game {
     return true;
   }
 
+  callGameOver() {
+    if (this.points >= 6) {
+      clear();
+      this.goodEnd.draw();
+      noLoop();
+    } else {
+      clear();
+      this.badEnd.draw();
+      noLoop();
+    }
+  }
+
   draw() {
     this.background.draw();
     this.character.draw();
 
+    //draw Points and Lifes
+    image(record, 100, 75, 30, 30);
+    textSize(30);
+    textStyle(BOLD);
+    fill(70, 3, 117);
+    text(`${this.points}`, 150, 100);
+    text(`❤️  ${this.lifes}`, 100, 140);
+
     //RECORDS
-    if (frameCount % 300 === 0) {
+    if (frameCount % 250 === 0) {
       this.records.push(new Record());
     }
     this.records.forEach((record, index) => {
@@ -58,7 +80,7 @@ class Game {
     });
 
     //GRAMOPHONES
-    const randomNewObstacle = Math.floor(random([120, 300, 350]));
+    const randomNewObstacle = Math.floor(random([100, 300]));
     if (frameCount % randomNewObstacle === 0) {
       const newGram = new Obstacle();
       this.gram.push(newGram);
@@ -77,14 +99,6 @@ class Game {
       this.callGameOver();
     }
 
-    //draw Points and Lifes
-    image(record, 100, 75, 30, 30);
-    textSize(30);
-    textStyle(BOLD);
-    fill(70, 3, 117);
-    text(`${this.points}`, 150, 100);
-    text(`❤️  ${this.lifes}`, 100, 140);
-
     //set game timer to 1 min
     if (frameCount % 60 === 0 && this.timer > 0) {
       this.timer--;
@@ -93,15 +107,15 @@ class Game {
       this.callGameOver();
     }
   }
-  callGameOver() {
-    if (this.points >= 6) {
-      clear();
-      this.goodEnd.draw();
-      noLoop();
-    } else {
-      clear();
-      this.badEnd.draw();
-      noLoop();
-    }
-  }
+  // callGameOver() {
+  //   if (this.points >= 6) {
+  //     clear();
+  //     this.goodEnd.draw();
+  //     noLoop();
+  //   } else {
+  //     clear();
+  //     this.badEnd.draw();
+  //     noLoop();
+  //   }
+  // }
 }

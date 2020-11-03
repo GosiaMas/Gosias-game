@@ -1,5 +1,4 @@
 const game = new Game();
-
 function preload() {
   bg = loadImage("./images/background.png");
   char = loadImage("./images/output-onlinepngtools.png");
@@ -7,7 +6,10 @@ function preload() {
   gram = loadImage("./images/gramophone.png");
   goodEnd = loadImage("./images/handsUp.png");
   badEnd = loadImage("./images/empty2.png");
-  //mySound =
+  // soundFormats("mp3", "ogg");
+  // mySound = loadSound(
+  //   "./images/60_Second-2020-07-09_-_Twilight_Dubstep_-_www.FesliyanStudios.com_Steve_Oxen.mp3"
+  // );
 }
 
 function setup() {

@@ -32,7 +32,7 @@ class BadEnd extends EndGame {
     textSize(40);
     fill(250);
     text("GAME OVER", 600, 100);
-    text("Don't worry!", 607, 150);
+    text("Don't worry,", 607, 150);
     text("You will fill the dancefloor next time!", 380, 200);
     //background(169, 169, 169);
     //(img, x, y, width, height)
