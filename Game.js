@@ -40,7 +40,7 @@ class Game {
   }
 
   callGameOver() {
-    if (this.points >= 6) {
+    if (this.points >= 5) {
       clear();
       this.goodEnd.draw();
       noLoop();
@@ -69,7 +69,7 @@ class Game {
     }
     this.records.forEach((record, index) => {
       record.draw();
-      // when off canvas remove from records from array
+      // when off canvas remove records from array
       if (record.x + record.width <= 0) {
         this.records.splice(index, 1);
       }
@@ -81,7 +81,7 @@ class Game {
     });
 
     //GRAMOPHONES
-    const randomNewObstacle = Math.floor(random([100, 300]));
+    const randomNewObstacle = Math.floor(random([100, 420]));
     if (frameCount % randomNewObstacle === 0) {
       const newGram = new Obstacle();
       this.gram.push(newGram);
@@ -100,7 +100,7 @@ class Game {
       this.callGameOver();
     }
 
-    //set game timer to 1 min
+    //set game timer to 40 seconds
     if (frameCount % 60 === 0 && this.timer > 0) {
       this.timer--;
     }
@@ -108,15 +108,4 @@ class Game {
       this.callGameOver();
     }
   }
-  // callGameOver() {
-  //   if (this.points >= 6) {
-  //     clear();
-  //     this.goodEnd.draw();
-  //     noLoop();
-  //   } else {
-  //     clear();
-  //     this.badEnd.draw();
-  //     noLoop();
-  //   }
-  // }
 }

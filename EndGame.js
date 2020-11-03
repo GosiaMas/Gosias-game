@@ -1,16 +1,5 @@
-class EndGame {
-  constructor() {
-    this.x = 0;
-    this.y = 0;
-    this.height = window.innerHeight;
-    this.width = window.innerWidth;
-  }
-}
-
-class GoodEnd extends EndGame {
-  constructor() {
-    super();
-  }
+class GoodEnd {
+  constructor() {}
   draw() {
     background(0);
     textSize(40);
@@ -22,10 +11,8 @@ class GoodEnd extends EndGame {
   }
 }
 
-class BadEnd extends EndGame {
-  constructor() {
-    super();
-  }
+class BadEnd {
+  constructor() {}
   draw() {
     background(0);
     textSize(40);
