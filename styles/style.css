@@ -1,5 +1,8 @@
 .landingPage {
   background-size: auto;
+  background-image: url("../images/pngegg.png");
+  background-repeat: no-repeat;
+  background-position: 750px;
   height: 720px;
   background-color: black;
   display: flex;

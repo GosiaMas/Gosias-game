@@ -5,11 +5,12 @@ class Game {
     this.records = [];
     this.gram = [];
     this.points = 0;
-    this.lifes = 3;
+    this.lifes = 1;
     this.goodEnd = new GoodEnd();
     this.badEnd = new BadEnd();
     this.timer = 40;
     this.isRunning = false;
+    //this.level =
     // this.mySound = mySound;
   }
 
@@ -40,7 +41,7 @@ class Game {
   }
 
   callGameOver() {
-    if (this.points >= 5) {
+    if (this.points >= 1) {
       clear();
       this.goodEnd.draw();
       noLoop();

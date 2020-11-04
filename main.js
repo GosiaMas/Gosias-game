@@ -1,7 +1,8 @@
 const game = new Game();
-const landingPage = document.querySelector(".landingPage");
 
+const landingPage = document.querySelector(".landingPage");
 const myButton = document.querySelector(".startButton");
+
 myButton.addEventListener("click", function (event) {
   landingPage.style.display = "none";
   game.isRunning = true;
