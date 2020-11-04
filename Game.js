@@ -12,12 +12,11 @@ class Game {
     this.isRunning = false;
     this.level = 1;
     //this.level2 = new Level2();
-    // this.mySound = mySound;
+    this.gameTune = gameTune;
   }
 
   setup() {
     this.background.setup();
-    // this.mySound.play();
   }
 
   //COLLISION CHECK AGAINST CHARACTER (obstacle is just a placeholder for record or gramophone)
@@ -45,12 +44,15 @@ class Game {
     if (this.points >= 1 && this.lifes > 0) {
       clear();
       this.goodEnd.draw();
+      //myTune.stop();
       noLoop();
     } else {
       clear();
       this.badEnd.draw();
+      //myTune.stop();
       noLoop();
     }
+    //myTune.stop();
   }
 
   resetVariables() {
@@ -131,6 +133,7 @@ class Game {
     });
     if (this.lifes <= 0) {
       this.callGameOver();
+      //myTune.stop();
     }
 
     //set game timer to 40 seconds
@@ -144,11 +147,7 @@ class Game {
       this.nextLevel();
     } else if (this.timer === 0) {
       this.callGameOver();
+      //myTune.stop();
     }
-
-    // below code for without levels
-    // if (this.timer === 0) {
-    //   this.callGameOver();
-    //}
   }
 }

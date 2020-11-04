@@ -4,4 +4,6 @@ let record;
 let gram;
 let goodEnd;
 let badEnd;
-// let mySound;
+let left;
+let right;
+let gameTune;

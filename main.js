@@ -6,6 +6,7 @@ const myButton = document.querySelector(".startButton");
 myButton.addEventListener("click", function (event) {
   landingPage.style.display = "none";
   game.isRunning = true;
+  //gameTune.play();
 });
 
 function preload() {
@@ -15,10 +16,7 @@ function preload() {
   gram = loadImage("./images/gramophone.png");
   goodEnd = loadImage("./images/handsUp.png");
   badEnd = loadImage("./images/GOSIA - GAME - 1 BLOKE BACK.jpg");
-  // soundFormats("mp3", "ogg");
-  // mySound = loadSound(
-  //   "./images/60_Second-2020-07-09_-_Twilight_Dubstep_-_www.FesliyanStudios.com_Steve_Oxen.mp3"
-  // );
+  gameTune = loadSound("./sounds/80seconds.mp3");
 }
 
 function setup() {

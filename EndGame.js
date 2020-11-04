@@ -26,7 +26,7 @@ class BadEnd {
     textSize(30);
     fill(250);
     text("Don't worry,", 607, 170);
-    text("You will fill the dancefloor next time!", 435, 215);
+    text("You will fill the dancefloor next time!", 455, 215);
     image(badEnd, 480, 250, 500, 400);
   }
 }
