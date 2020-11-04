@@ -5,10 +5,10 @@ class Game {
     this.records = [];
     this.gram = [];
     this.points = 0;
-    this.lifes = 1;
+    this.lifes = 2;
     this.goodEnd = new GoodEnd();
     this.badEnd = new BadEnd();
-    this.timer = 15;
+    this.timer = 40;
     this.isRunning = false;
     this.level = 1;
     //this.level2 = new Level2();
@@ -41,7 +41,7 @@ class Game {
   }
 
   callGameOver() {
-    if (this.points >= 1 && this.lifes > 0) {
+    if (this.points >= 8 && this.lifes > 0) {
       clear();
       this.goodEnd.draw();
       //myTune.stop();
@@ -57,8 +57,8 @@ class Game {
 
   resetVariables() {
     this.points = 0;
-    this.lifes = 1;
-    this.timer = 15;
+    this.lifes = 2;
+    this.timer = 40;
   }
 
   nextLevel() {
@@ -89,7 +89,7 @@ class Game {
     text(`${this.timer} seconds left`, 1200, 110);
 
     //RECORDS
-    if (frameCount % 250 === 0) {
+    if (frameCount % 200 === 0) {
       this.records.push(new Record());
     }
     this.records.forEach((record, index) => {
@@ -142,7 +142,7 @@ class Game {
     }
 
     //Up the level or game over
-    if (this.timer === 0 && this.points >= 1 && this.level === 1) {
+    if (this.timer === 0 && this.points >= 8 && this.level === 1) {
       this.level++;
       this.nextLevel();
     } else if (this.timer === 0) {
