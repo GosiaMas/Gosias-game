@@ -27,8 +27,18 @@ class BadEnd {
     fill(250);
     text("Don't worry,", 607, 170);
     text("You will fill the dancefloor next time!", 435, 215);
-    //background(169, 169, 169);
-    //(img, x, y, width, height)
     image(badEnd, 480, 250, 500, 400);
   }
 }
+
+// class Level2 {
+//   constructor() {}
+//   draw() {
+//     background(0);
+//     textSize(120);
+//     fill(153, 51, 153);
+//     text("Great, you reached LEVEL 2!", 500, 500);
+//     // press button or after some time
+//     //restert game
+//   }
+// }

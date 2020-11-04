@@ -8,9 +8,10 @@ class Game {
     this.lifes = 1;
     this.goodEnd = new GoodEnd();
     this.badEnd = new BadEnd();
-    this.timer = 40;
+    this.timer = 15;
     this.isRunning = false;
-    //this.level =
+    this.level = 1;
+    //this.level2 = new Level2();
     // this.mySound = mySound;
   }
 
@@ -52,6 +53,17 @@ class Game {
     }
   }
 
+  resetVariables() {
+    this.points = 0;
+    this.lifes = 1;
+    this.timer = 15;
+  }
+
+  nextLevel() {
+    clear();
+    this.resetVariables();
+  }
+
   draw() {
     this.background.draw();
     this.character.draw();
@@ -63,10 +75,16 @@ class Game {
     fill(70, 3, 117);
     text(`${this.points}`, 150, 100);
     text(`❤️  ${this.lifes}`, 100, 140);
+
+    textSize(20);
+    textStyle(BOLD);
+    fill(70, 3, 117);
+    text(`Level: ${this.level}`, 1200, 80);
+
     textSize(20);
     textStyle(NORMAL);
     fill(70, 3, 117);
-    text(`${this.timer} seconds left`, 1200, 80);
+    text(`${this.timer} seconds left`, 1200, 110);
 
     //RECORDS
     if (frameCount % 250 === 0) {
@@ -78,7 +96,7 @@ class Game {
       if (record.x + record.width <= 0) {
         this.records.splice(index, 1);
       }
-      //  //do something when record collected
+      //do something when record collected
       if (this.collisionCheck(record, this.character)) {
         this.points += 1;
         record.y = -200;
@@ -86,11 +104,21 @@ class Game {
     });
 
     //GRAMOPHONES
-    const randomNewObstacle = Math.floor(random([100, 420]));
-    if (frameCount % randomNewObstacle === 0) {
-      const newGram = new Obstacle();
-      this.gram.push(newGram);
+    //level difference
+    if (this.level === 1) {
+      const randomNewObstacle = Math.floor(random([100, 420]));
+      if (frameCount % randomNewObstacle === 0) {
+        const newGram = new Obstacle(5);
+        this.gram.push(newGram);
+      }
+    } else if (this.level === 2) {
+      const randomNewObstacle = Math.floor(random([100, 420]));
+      if (frameCount % randomNewObstacle === 0) {
+        const newGram = new Obstacle(8);
+        this.gram.push(newGram);
+      }
     }
+
     this.gram.forEach((obstacle, index) => {
       obstacle.draw();
       if (obstacle.x + obstacle.width <= 0) {
@@ -109,8 +137,18 @@ class Game {
     if (frameCount % 60 === 0 && this.timer > 0) {
       this.timer--;
     }
-    if (this.timer === 0) {
+
+    //Up the level or game over
+    if (this.timer === 0 && this.points >= 1 && this.level === 1) {
+      this.level++;
+      this.nextLevel();
+    } else if (this.timer === 0) {
       this.callGameOver();
     }
+
+    // below code for without levels
+    // if (this.timer === 0) {
+    //   this.callGameOver();
+    //}
   }
 }

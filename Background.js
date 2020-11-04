@@ -1,6 +1,7 @@
 class Background {
   constructor() {
     this.x = 0;
+    this.speed = 3;
   }
 
   setup() {
@@ -9,7 +10,7 @@ class Background {
   }
 
   draw() {
-    this.x -= 3; //moves it
+    this.x -= this.speed; //moves background
     //below attaches one background to another so there is no gap between them
     image(bg, this.x, 0, width, height);
     image(bg, this.x + this.width, 0, this.width, this.height);
