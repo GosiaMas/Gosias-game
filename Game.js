@@ -56,13 +56,17 @@ class Game {
     this.background.draw();
     this.character.draw();
 
-    //draw Points and Lifes
+    //draw Points,Lifes, timer
     image(record, 100, 75, 30, 30);
     textSize(30);
     textStyle(BOLD);
     fill(70, 3, 117);
     text(`${this.points}`, 150, 100);
     text(`❤️  ${this.lifes}`, 100, 140);
+    textSize(20);
+    textStyle(NORMAL);
+    fill(70, 3, 117);
+    text(`${this.timer} seconds left`, 1200, 80);
 
     //RECORDS
     if (frameCount % 250 === 0) {
