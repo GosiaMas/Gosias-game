@@ -2,7 +2,7 @@
   background-size: auto;
   background-image: url("../images/pngegg.png");
   background-repeat: no-repeat;
-  background-position: 750px;
+  background-position: 800px;
   height: 720px;
   background-color: black;
   display: flex;
@@ -12,9 +12,14 @@
 }
 
 h1,
-h2 {
+h2,
+h3 {
   color: white;
   padding-top: 30px;
+}
+
+h1 {
+  margin-bottom: 30px;
 }
 
 .startButton {

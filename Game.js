@@ -81,12 +81,12 @@ class Game {
     textSize(20);
     textStyle(BOLD);
     fill(70, 3, 117);
-    text(`Level: ${this.level}`, 1200, 80);
+    text(`Level: ${this.level}`, 1200, 100);
 
     textSize(20);
     textStyle(NORMAL);
     fill(70, 3, 117);
-    text(`${this.timer} seconds left`, 1200, 110);
+    text(`${this.timer} seconds left`, 1200, 130);
 
     //RECORDS
     if (frameCount % 200 === 0) {
