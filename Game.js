@@ -41,7 +41,7 @@ class Game {
   }
 
   callGameOver() {
-    if (this.points >= 1) {
+    if (this.points >= 1 && this.lifes > 0) {
       clear();
       this.goodEnd.draw();
       noLoop();
