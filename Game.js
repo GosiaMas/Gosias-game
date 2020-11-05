@@ -145,5 +145,10 @@ class Game {
     } else if (this.timer === 0) {
       this.callGameOver();
     }
+    if (this.level === 2 && this.timer >= 37) {
+      fill(255);
+      textSize(40);
+      text("You made it to level 2!", 550, 300);
+    }
   }
 }

@@ -39,7 +39,6 @@ class BadEnd {
 //     textSize(120);
 //     fill(153, 51, 153);
 //     text("Great, you reached LEVEL 2!", 500, 500);
-//     // press button or after some time
-//     //restert game
+//     // press button to restert game
 //   }
 // }
