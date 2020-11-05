@@ -1,6 +1,6 @@
 class Obstacle {
   constructor(speed) {
-    this.x = window.innerWidth;
+    this.x = 1440;
     this.y = 560;
     this.width = 60;
     this.height = 50;

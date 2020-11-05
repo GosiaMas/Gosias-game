@@ -1,9 +1,14 @@
+body {
+  background-color: black;
+  margin: 0 auto;
+}
+
 .landingPage {
   background-size: auto;
   background-image: url("../images/pngegg.png");
   background-repeat: no-repeat;
   background-position: 800px;
-  height: 720px;
+  height: 700px;
   background-color: black;
   display: flex;
   align-items: center;

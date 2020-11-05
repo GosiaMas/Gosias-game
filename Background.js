@@ -5,14 +5,14 @@ class Background {
   }
 
   setup() {
-    this.height = window.innerHeight;
-    this.width = window.innerWidth;
+    this.height = 705; //window.innerHeight;
+    this.width = 1440; //window.innerWidth;
   }
 
   draw() {
     this.x -= this.speed; //moves background
     //below attaches one background to another so there is no gap between them
-    image(bg, this.x, 0, width, height);
+    image(bg, this.x, 0, this.width, this.height);
     image(bg, this.x + this.width, 0, this.width, this.height);
 
     if (this.x <= -this.width) {

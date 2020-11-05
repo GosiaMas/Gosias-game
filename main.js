@@ -6,7 +6,7 @@ const myButton = document.querySelector(".startButton");
 myButton.addEventListener("click", function (event) {
   landingPage.style.display = "none";
   game.isRunning = true;
-  //gameTune.play();
+  gameTune.play();
 });
 
 function preload() {
@@ -16,12 +16,13 @@ function preload() {
   gram = loadImage("./images/gramophone.png");
   goodEnd = loadImage("./images/handsUp.png");
   badEnd = loadImage("./images/GOSIA - GAME - 1 BLOKE BACK.jpg");
+  deck = loadImage("./images/deck.png");
   gameTune = loadSound("./sounds/80seconds.mp3");
 }
 
 function setup() {
   console.log("setup");
-  createCanvas(window.innerWidth, window.innerHeight);
+  createCanvas(1440, 705);
   game.setup();
 }
 

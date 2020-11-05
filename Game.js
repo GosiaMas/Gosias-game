@@ -44,15 +44,13 @@ class Game {
     if (this.points >= 8 && this.lifes > 0) {
       clear();
       this.goodEnd.draw();
-      //myTune.stop();
       noLoop();
     } else {
       clear();
       this.badEnd.draw();
-      //myTune.stop();
       noLoop();
     }
-    //myTune.stop();
+    gameTune.stop();
   }
 
   resetVariables() {
@@ -78,7 +76,7 @@ class Game {
     text(`${this.points}`, 150, 100);
     text(`❤️  ${this.lifes}`, 100, 140);
 
-    textSize(20);
+    textSize(25);
     textStyle(BOLD);
     fill(70, 3, 117);
     text(`Level: ${this.level}`, 1200, 100);
@@ -133,7 +131,6 @@ class Game {
     });
     if (this.lifes <= 0) {
       this.callGameOver();
-      //myTune.stop();
     }
 
     //set game timer to 40 seconds
@@ -147,7 +144,6 @@ class Game {
       this.nextLevel();
     } else if (this.timer === 0) {
       this.callGameOver();
-      //myTune.stop();
     }
   }
 }

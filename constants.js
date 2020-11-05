@@ -7,3 +7,4 @@ let badEnd;
 let left;
 let right;
 let gameTune;
+let deck;

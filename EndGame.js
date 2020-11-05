@@ -2,6 +2,7 @@ class GoodEnd {
   constructor() {}
   draw() {
     background(0);
+    //image(deck, 50, 50, 1300, 700);
     textSize(60);
     fill(153, 51, 153);
     text("GAME OVER", 550, 100);
