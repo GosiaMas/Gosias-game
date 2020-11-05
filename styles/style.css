@@ -1,13 +1,16 @@
 body {
   background-color: black;
   margin: 0 auto;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
 .landingPage {
   background-size: auto;
   background-image: url("../images/pngegg.png");
   background-repeat: no-repeat;
-  background-position: 800px;
+  background-position: 90%;
   height: 700px;
   background-color: black;
   display: flex;
