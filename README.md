@@ -1,8 +1,9 @@
 ## Can you DJ the night?
 
 
-Try to collect enough records to see the good ending and be sure to avoid obstacles and loose lives.
-If you will not succeed, you will witness a rather pitiful picture every DJ has experienced at least once in their career.
+Collect enough records to win. 
+Be sure to avoid obstacles - or lose lives.
+If you fail, prepare to witness a rather pitiful scene every DJ dreads.
 
 **[- Link to Game -](https://gosiamas.github.io/Gosias-game/)**
 
