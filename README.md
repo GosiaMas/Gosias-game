@@ -1,7 +1,6 @@
 ## Can you DJ the night?
 
 
-Have a go.
 Try to collect enough records to see the good ending and be sure to avoid obstacles and loose lives.
 If you will not succeed you will witness a rather pitiful picture every DJ survived at least once in their career.
 
